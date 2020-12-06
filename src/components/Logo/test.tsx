@@ -24,4 +24,11 @@ describe('<Logo />', () => {
       width: '20rem'
     })
   })
+
+  it('should render a normal logo', () => {
+    renderWithTheme(<Logo size="normal" />)
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
+      width: '11rem'
+    })
+  })
 })
