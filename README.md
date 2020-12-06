@@ -1,10 +1,4 @@
-React and NextJS boilerplate with the following packages already configured
+Won Games Client - ReactJS, NextJS, GraphQL and more.
 
-- React
-- TypeScript
-- NextJS
-- Styled Components
-- Jest
-- React test library
-- Husky
-- Storybook
+yarn install
+yarn start
