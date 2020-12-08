@@ -8,5 +8,7 @@ describe('<Menu />', () => {
     renderWithTheme(<Menu />)
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/shopping cart/i)).toBeInTheDocument()
   })
 })

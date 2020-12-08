@@ -16,10 +16,10 @@ const Menu = () => (
     </S.LogoWrapper>
     <S.MenuGroup>
       <S.IconWrapper>
-        <SearchIcon />
+        <SearchIcon aria-label="Search" />
       </S.IconWrapper>
       <S.IconWrapper>
-        <ShoppingCartIcon />
+        <ShoppingCartIcon aria-label="Shopping Cart" />
       </S.IconWrapper>
     </S.MenuGroup>
   </S.Wrapper>
