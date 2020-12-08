@@ -4,6 +4,7 @@ export type LogoProps = {
   color?: 'white' | 'black'
   size?: 'normal' | 'large'
   hideOnMobile?: boolean
+  ariaLabel?: string
 }
 
 const Logo = ({
