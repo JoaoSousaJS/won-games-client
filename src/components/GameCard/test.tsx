@@ -25,11 +25,10 @@ describe('<GameCard />', () => {
 
     expect(
       screen.getByRole('img', { name: /population zero/i })
-    ).toHaveAttribute(
-      'src',
-      'https://steamcdn-a.akamaihd.net/steam/apps/1091500/header.jpg?t=1607696821'
-    )
+    ).toHaveAttribute('src', props.img)
 
     expect(screen.getByText(/AUD 235.00/i)).toBeInTheDocument()
+
+    expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
 })
