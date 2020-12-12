@@ -48,4 +48,12 @@ describe('<GameCard />', () => {
       backgroundColor: '#3CD3C1'
     })
   })
+
+  it('should render a line-through in price when promotional', () => {
+    renderWithTheme(<GameCard promotionalPrice="true" {...props} />)
+
+    expect(screen.getByText(/AUD 235.00/i)).toHaveStyle({
+      textDecoration: 'line-through'
+    })
+  })
 })
