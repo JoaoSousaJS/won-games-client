@@ -99,7 +99,7 @@ type PriceProps = {
   isPromotional?: boolean
 }
 
-const priceModifiers = {
+export const priceModifiers = {
   default: (theme: DefaultTheme) => css`
     color: ${theme.colors.white};
     padding: 0 ${theme.spacings.xxsmall};
