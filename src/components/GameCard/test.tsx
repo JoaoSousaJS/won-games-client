@@ -31,4 +31,21 @@ describe('<GameCard />', () => {
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
+
+  it('should render price in label', () => {
+    renderWithTheme(<GameCard {...props} />)
+
+    expect(screen.getByText(/AUD 235.00/i)).not.toHaveAttribute(
+      'text-decoration',
+      'line-through'
+    )
+    expect(screen.getByText(/AUD 235.00/i)).not.toHaveAttribute(
+      'color',
+      '#8F8F8F'
+    )
+
+    expect(screen.getByText(/AUD 235.00/i)).toHaveStyle({
+      backgroundColor: '#3CD3C1'
+    })
+  })
 })
