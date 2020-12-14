@@ -30,10 +30,12 @@ const Menu = ({ username }: MenuProps) => {
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
-        <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
-          <S.MenuLink href="#">Expore</S.MenuLink>
-        </S.MenuNav>
+        <div style={{ marginLeft: '5rem' }}>
+          <S.MenuNav>
+            <S.MenuLink href="#">Home</S.MenuLink>
+            <S.MenuLink href="#">Expore</S.MenuLink>
+          </S.MenuNav>
+        </div>
       </MediaMatch>
 
       <S.MenuGroup>
