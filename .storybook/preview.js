@@ -12,7 +12,7 @@ export const parameters = {
       },
       {
         name: 'won-dark',
-        value: theme.colors.mainBg,
+        value: theme.colors.white,
       },
     ],
   },
