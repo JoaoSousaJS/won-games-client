@@ -1,6 +1,18 @@
-import { createGlobalStyle, css } from 'styled-components'
+import {
+  createGlobalStyle,
+  css,
+  DefaultTheme,
+  GlobalStyleComponent
+} from 'styled-components'
 
-export const GlobalStyles = createGlobalStyle`
+type GlobalStyleProps = {
+  removeBg?: boolean
+}
+
+export const GlobalStyles: GlobalStyleComponent<
+  GlobalStyleProps,
+  DefaultTheme
+> = createGlobalStyle`
 /* poppins-300 - latin */
   @font-face {
     font-family: 'Poppins';
@@ -41,15 +53,19 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  ${({ theme }) => css`
+  ${({ theme, removeBg }) => css`
     html {
       font-size: 62.5%;
     }
 
     body {
-      background-color: ${theme.colors.mainBg};
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
+
+      ${!removeBg &&
+      css`
+        background-color: ${theme.colors.mainBg};
+      `}
     }
   `}
 
