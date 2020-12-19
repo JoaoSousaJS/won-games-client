@@ -55,4 +55,14 @@ describe('<Checkbox />', () => {
     })
     expect(onCheck).toHaveBeenCalledWith(false)
   })
+
+  it('should be acessible with tab', async () => {
+    renderWithTheme(<Checkbox label="Checkbox" labelFor="Checkbox" />)
+
+    expect(document.body).toHaveFocus()
+
+    userEvent.tab()
+    expect(document.body).not.toHaveFocus()
+    expect(screen.getByLabelText(/checkbox/i)).toHaveFocus()
+  })
 })
