@@ -1,4 +1,19 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
+import { TextFieldProps } from '.'
+
+type WrapperProps = { hasIcon: boolean } & Pick<TextFieldProps, 'icon'>
+
+const wrapperModifiers = {
+  withIcon: (theme: DefaultTheme) => css`
+    svg {
+      width: 1.5rem;
+
+      & + span {
+        margin-left: ${theme.spacings.xxsmall};
+      }
+    }
+  `
+}
 
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
@@ -35,4 +50,8 @@ export const Label = styled.label`
   `}
 `
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, hasIcon }) => css`
+    ${!!hasIcon && wrapperModifiers.withIcon(theme)}
+  `}
+`
