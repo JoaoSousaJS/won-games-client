@@ -1,19 +1,7 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { TextFieldProps } from '.'
 
-type WrapperProps = { hasIcon: boolean } & Pick<TextFieldProps, 'icon'>
-
-const wrapperModifiers = {
-  withIcon: (theme: DefaultTheme) => css`
-    svg {
-      width: 1.5rem;
-
-      & + span {
-        margin-left: ${theme.spacings.xxsmall};
-      }
-    }
-  `
-}
+type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
 
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
@@ -29,12 +17,13 @@ export const InputWrapper = styled.div`
   `}
 `
 
-export const Input = styled.input`
-  ${({ theme }) => css`
+export const Input = styled.input<IconPositionProps>`
+  ${({ theme, iconPosition }) => css`
     color: ${theme.colors.black};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} 0;
+    padding-${iconPosition}: ${theme.spacings.xsmall};
     background: transparent;
     border: 0;
     outline: none;
@@ -49,9 +38,16 @@ export const Label = styled.label`
     cursor: pointer;
   `}
 `
+export const Icon = styled.div<IconPositionProps>`
+  ${({ theme, iconPosition }) => css`
+    display: flex;
+    width: 2.2rem;
+    color: ${theme.colors.gray};
+    order: ${iconPosition === 'right' ? 1 : 0};
 
-export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, hasIcon }) => css`
-    ${!!hasIcon && wrapperModifiers.withIcon(theme)}
+    & > svg {
+      width: 100%;
+    }
   `}
 `
+export const Wrapper = styled.div``

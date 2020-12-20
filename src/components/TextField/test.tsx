@@ -70,4 +70,17 @@ describe('<TextField />', () => {
     )
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render an icon on the right side', () => {
+    renderWithTheme(
+      <TextField
+        label="TextField"
+        labelFor="TextField"
+        id="TextField"
+        icon={<Email data-testid="icon" />}
+        iconPosition="right"
+      />
+    )
+    expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
+  })
 })
