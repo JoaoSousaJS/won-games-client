@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { Email, Lock, AccountCircle } from '@styled-icons/material-outlined'
 import Button from 'components/Button'
 import TextField from 'components/TextField'
-import * as S from './styles'
+import { FormWrapper, FormLink } from 'components/Form'
 
 const FormSignUp = () => (
-  <S.Wrapper>
+  <FormWrapper>
     <form>
       <TextField
         name="name"
@@ -37,14 +37,14 @@ const FormSignUp = () => (
       <Button size="large" fullWidth>
         Sign up now
       </Button>
-      <S.FormLink>
+      <FormLink>
         Already have an account?{' '}
         <Link href="/sign-in" prefetch={false}>
           <a>Sign In</a>
         </Link>
-      </S.FormLink>
+      </FormLink>
     </form>
-  </S.Wrapper>
+  </FormWrapper>
 )
 
 export default FormSignUp
