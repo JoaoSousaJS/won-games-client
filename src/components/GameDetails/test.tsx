@@ -4,6 +4,6 @@ import GameDetails from './index'
 
 describe('<GameDetails />', () => {
   it('should render the heading', () => {
-    renderWithTheme(<GameDetails />)
+    renderWithTheme(<GameDetails platforms={['linux']} />)
   })
 })

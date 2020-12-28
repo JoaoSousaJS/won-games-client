@@ -39,3 +39,16 @@ export const Description = styled.p`
     color: ${theme.colors.white};
   `}
 `
+
+export const Icon = styled.div`
+  ${({ theme }) => css`
+    margin-right: ${theme.spacings.xxsmall};
+  `}
+`
+export const IconWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    color: ${theme.colors.white};
+  `}
+`
