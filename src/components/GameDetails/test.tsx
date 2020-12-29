@@ -5,7 +5,8 @@ import GameDetails, { GameDetailProps } from './index'
 
 const props: GameDetailProps = {
   developer: 'Different Tales',
-  platforms: ['windows', 'mac', 'linux']
+  platforms: ['windows', 'mac', 'linux'],
+  releaseDate: '2020-11-21T23:00:00'
 }
 
 describe('<GameDetails />', () => {
@@ -39,5 +40,11 @@ describe('<GameDetails />', () => {
     expect(screen.getByRole('img', { name: /linux/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /mac/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /windows/i })).toBeInTheDocument()
+  })
+
+  it('should render the formated date', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument()
   })
 })

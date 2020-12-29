@@ -5,7 +5,8 @@ export default {
   title: 'Game/GameDetails',
   component: GameDetails,
   args: {
-    platforms: ['windows', 'linux', 'mac']
+    platforms: ['windows', 'linux', 'mac'],
+    releaseDate: '2020-11-21T23:00:00'
   },
   argTypes: {
     platforms: {
