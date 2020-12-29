@@ -6,7 +6,8 @@ export default {
   component: GameDetails,
   args: {
     platforms: ['windows', 'linux', 'mac'],
-    releaseDate: '2020-11-21T23:00:00'
+    releaseDate: '2020-11-21T23:00:00',
+    developer: 'Different Tales'
   },
   argTypes: {
     platforms: {
