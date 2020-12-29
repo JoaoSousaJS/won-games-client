@@ -7,10 +7,11 @@ import * as S from './styles'
 type Platform = 'windows' | 'linux' | 'mac'
 
 export type GameDetailProps = {
+  developer: string
   platforms: Platform[]
 }
 
-const GameDetails = ({ platforms }: GameDetailProps) => {
+const GameDetails = ({ developer, platforms }: GameDetailProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
     mac: <Apple title="Mac" size={18} />,
@@ -28,7 +29,7 @@ const GameDetails = ({ platforms }: GameDetailProps) => {
       <S.Content>
         <S.Block>
           <S.Label>Developer</S.Label>
-          <S.Description>Gearbox Software</S.Description>
+          <S.Description>{developer}</S.Description>
         </S.Block>
 
         <S.Block>

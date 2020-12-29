@@ -1,9 +1,20 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import GameDetails from '.'
+import GameDetails, { GameDetailProps } from '.'
 
 export default {
   title: 'Game/GameDetails',
   component: GameDetails,
+  args: {
+    platforms: ['windows', 'linux', 'mac']
+  },
+  argTypes: {
+    platforms: {
+      control: {
+        type: 'inline-check',
+        options: ['windows', 'linux', 'mac']
+      }
+    }
+  },
   parameters: {
     backgrounds: {
       default: 'won-dark'
@@ -18,6 +29,4 @@ export default {
   ]
 } as Meta
 
-export const Basic: Story = (args) => (
-  <GameDetails {...args} platforms={['windows', 'linux', 'mac']} />
-)
+export const Basic: Story<GameDetailProps> = (args) => <GameDetails {...args} />
