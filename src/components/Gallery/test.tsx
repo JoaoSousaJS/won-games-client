@@ -1,5 +1,5 @@
 import 'match-media-mock'
-import { screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Gallery from './index'
@@ -17,5 +17,20 @@ describe('<Gallery />', () => {
     expect(
       screen.getByRole('button', { name: /Thumb - Gallery image 2/i })
     ).toHaveAttribute('src', mockItems[1].src)
+  })
+
+  it('should render open modal', () => {
+    renderWithTheme(<Gallery items={mockItems.slice(0, 2)} />)
+
+    const modal = screen.getByLabelText('modal')
+
+    expect(modal.getAttribute('aria-hidden')).toBe('true')
+    expect(modal).toHaveStyle({ opacity: 0, pointerEvents: 'none' })
+
+    fireEvent.click(
+      screen.getByRole('button', { name: /Thumb - Gallery image 1/i })
+    )
+    expect(modal.getAttribute('aria-hidden')).toBe('false')
+    expect(modal).toHaveStyle({ opacity: 1 })
   })
 })
