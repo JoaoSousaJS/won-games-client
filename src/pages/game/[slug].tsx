@@ -1,4 +1,5 @@
 import Game, { GameTemplateProps } from 'templates/Game'
+import galleryMock from 'components/Gallery/mock'
 
 export default function Index(props: GameTemplateProps) {
   return <Game {...props} />
@@ -20,7 +21,8 @@ export async function getStaticProps() {
         price: '59.00',
         description:
           'Cyberpunk 2077 is an open-world, action-adventure story set in night city, a megalopis obessed with power, glamour and body modification. You play as V, mercenary outlaw going after a one-of-a-kind implant that is the key to immortality'
-      }
+      },
+      gallery: galleryMock
     }
   }
 }
