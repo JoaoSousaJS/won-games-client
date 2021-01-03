@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import TextContent, { TextContentProps } from '.'
-import textMock from './mock'
+import { TextContentMock } from './mock'
 
 export default {
   title: 'TextContent',
   component: TextContent,
-  args: textMock,
+  args: TextContentMock,
   parameters: {
     backgrounds: {
       default: 'won-dark'

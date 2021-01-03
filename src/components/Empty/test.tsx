@@ -10,7 +10,7 @@ const props = {
 
 describe('<Empty />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Empty {...props} />)
+    renderWithTheme(<Empty {...props} hasLink />)
 
     expect(
       screen.getByRole('image', {
@@ -22,6 +22,10 @@ describe('<Empty />', () => {
       screen.getByRole('heading', { name: /a simple title/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByText(/a simple description/i))
+    expect(screen.getByText(/a simple description/i)).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('link', { name: /go back to store/i })
+    ).toHaveAttribute('href', '/')
   })
 })
