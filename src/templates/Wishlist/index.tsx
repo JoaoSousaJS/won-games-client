@@ -34,6 +34,7 @@ const Wishlist = ({
         <Empty
           title="Your wishlist is empty"
           description="Games added to your wishlist"
+          hasLink
         />
       )}
 
