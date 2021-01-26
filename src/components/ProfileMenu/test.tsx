@@ -5,11 +5,15 @@ import ProfileMenu from './index'
 
 describe('<ProfileMenu />', () => {
   it('should render the heading', () => {
-    renderWithTheme(<ProfileMenu />)
+    const { container } = renderWithTheme(<ProfileMenu />)
 
-    expect(screen.getByText('My Profile')).toBeInTheDocument()
-    expect(screen.getByText('My cards')).toBeInTheDocument()
-    expect(screen.getByText('My Orders')).toBeInTheDocument()
-    expect(screen.getByText('Signout')).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /my profile/i })
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /my cards/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /my orders/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /signout/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
