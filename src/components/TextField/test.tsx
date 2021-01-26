@@ -8,7 +8,7 @@ import TextField from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />)
+    renderWithTheme(<TextField label="Label" name="Label" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
@@ -28,12 +28,7 @@ describe('<TextField />', () => {
   it('Changes its value when typing', async () => {
     const onInput = jest.fn()
     renderWithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-      />
+      <TextField onInput={onInput} label="TextField" name="TextField" />
     )
 
     const input = screen.getByRole('textbox')
@@ -48,9 +43,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', () => {
-    renderWithTheme(
-      <TextField label="TextField" labelFor="TextField" id="TextField" />
-    )
+    renderWithTheme(<TextField label="TextField" name="Label" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -63,8 +56,7 @@ describe('<TextField />', () => {
     renderWithTheme(
       <TextField
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         icon={<Email data-testid="icon" />}
       />
     )
@@ -75,8 +67,7 @@ describe('<TextField />', () => {
     renderWithTheme(
       <TextField
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         icon={<Email data-testid="icon" />}
         iconPosition="right"
       />
@@ -90,8 +81,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         disabled
       />
     )
@@ -113,8 +103,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         disabled
       />
     )
@@ -130,7 +119,7 @@ describe('<TextField />', () => {
     const { container } = renderWithTheme(
       <TextField
         label="TextField"
-        labelFor="TextField"
+        name="TextField"
         icon={<Email data-testid="icon" />}
         error="Error message"
       />
