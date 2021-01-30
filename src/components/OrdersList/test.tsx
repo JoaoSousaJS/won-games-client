@@ -7,7 +7,7 @@ import mock from './mock'
 jest.mock('components/Empty', () => ({
   __esModule: true,
   default: function Mock() {
-    return <div data-testid="Mock GameItem" />
+    return <div data-testid="Mock Empty" />
   }
 }))
 
@@ -27,5 +27,11 @@ describe('<OrdersList />', () => {
     ).toBeInTheDocument()
 
     expect(screen.getAllByTestId('Mock GameItem')).toHaveLength(2)
+  })
+
+  it('should render empty state', () => {
+    renderWithTheme(<OrdersList items={[]} />)
+
+    expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
   })
 })
