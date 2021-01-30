@@ -30,7 +30,7 @@ describe('<OrdersList />', () => {
   })
 
   it('should render empty state', () => {
-    renderWithTheme(<OrdersList items={[]} />)
+    renderWithTheme(<OrdersList />)
 
     expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
   })
