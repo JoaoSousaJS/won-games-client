@@ -23,5 +23,9 @@ describe('<ExploreSidebar />', () => {
     expect(
       screen.getByRole('checkbox', { name: /under \$50/i })
     ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('radio', { name: /low to high/i })
+    ).toBeInTheDocument()
   })
 })
