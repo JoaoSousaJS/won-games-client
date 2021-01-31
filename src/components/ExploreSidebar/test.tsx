@@ -71,10 +71,15 @@ describe('<ExploreSidebar />', () => {
     renderWithTheme(<ExploreSidebar items={items} onFilter={onFilter} />)
 
     userEvent.click(screen.getByLabelText(/windows/i))
+    userEvent.click(screen.getByLabelText(/linux/i))
     userEvent.click(screen.getByLabelText(/low to high/i))
     userEvent.click(screen.getByRole('button', { name: /filter/i }))
 
-    expect(onFilter).toBeCalledWith({ windows: true, sort_by: 'low-to-high' })
+    expect(onFilter).toBeCalledWith({
+      windows: true,
+      linux: true,
+      sort_by: 'low-to-high'
+    })
   })
 
   it('should altern between radio options', () => {
