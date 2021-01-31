@@ -1,3 +1,4 @@
+import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import Heading from 'components/Heading'
 import Radio from 'components/Radio'
@@ -34,9 +35,20 @@ const ExploreSidebar = () => (
     <Heading lineBottom lineColor="secondary" size="small">
       System
     </Heading>
+    <Checkbox name="windows" label="Windows" labelFor="windows" />
+    <Checkbox name="mac" label="Mac" labelFor="mac" />
+    <Checkbox name="linux" label="Linux" labelFor="linux" />
     <Heading lineBottom lineColor="secondary" size="small">
       Genre
     </Heading>
+    <Checkbox name="action" label="Action" labelFor="action" />
+    <Checkbox name="adventure" label="Adventure" labelFor="adventure" />
+    <Checkbox name="fps" label="Fps" labelFor="fps" />
+    <Checkbox name="mmorpg" label="MMORPG" labelFor="mmorpg" />
+
+    <Button fullWidth size="medium">
+      Filter
+    </Button>
   </S.Wrapper>
 )
 
