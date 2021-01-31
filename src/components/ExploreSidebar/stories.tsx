@@ -1,8 +1,13 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import ExploreSidebar from '.'
+import ExploreSidebar, { ExploreSideBarProps } from '.'
+
+import items from './mock'
 
 export default {
   title: 'ExploreSidebar',
+  args: {
+    items
+  },
   component: ExploreSidebar,
   parameters: {
     backgrounds: {
@@ -11,4 +16,6 @@ export default {
   }
 } as Meta
 
-export const Basic: Story = (args) => <ExploreSidebar {...args} />
+export const Basic: Story<ExploreSideBarProps> = (args) => (
+  <ExploreSidebar {...args} />
+)
