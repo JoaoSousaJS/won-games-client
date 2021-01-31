@@ -1,3 +1,4 @@
+import Checkbox from 'components/Checkbox'
 import Heading from 'components/Heading'
 import * as S from './styles'
 
@@ -6,6 +7,7 @@ const ExploreSidebar = () => (
     <Heading lineBottom lineColor="secondary" size="small">
       Price
     </Heading>
+    <Checkbox name="under-50" label="Under $50" labelFor="under-50" />
     <Heading lineBottom lineColor="secondary" size="small">
       Sort by
     </Heading>

@@ -16,4 +16,12 @@ describe('<ExploreSidebar />', () => {
 
     expect(screen.getByRole('heading', { name: /genre/i })).toBeInTheDocument()
   })
+
+  it('should render inputs', () => {
+    renderWithTheme(<ExploreSidebar />)
+
+    expect(
+      screen.getByRole('checkbox', { name: /under \$50/i })
+    ).toBeInTheDocument()
+  })
 })
