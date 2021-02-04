@@ -17,6 +17,7 @@ export const Footer = styled.div`
     color: ${theme.colors.black};
     font-weight: ${theme.font.bold};
     font-size: ${theme.font.sizes.small};
+    align-items: center;
     padding: 2rem;
     display: flex;
     justify-content: space-between;
