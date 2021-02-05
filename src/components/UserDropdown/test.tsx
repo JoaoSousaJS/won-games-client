@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import UserDropdown from './index'
@@ -13,8 +14,14 @@ describe('<UserDropdown />', () => {
   it('should render the menu', () => {
     renderWithTheme(<UserDropdown username="test" />)
 
-    expect(screen.getByText(/My profile/i)).toBeInTheDocument()
-    expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
-    expect(screen.getByText(/Sign out/i)).toBeInTheDocument()
+    userEvent.click(screen.getByText(/test/i))
+
+    expect(
+      screen.getByRole('link', { name: /my profile/i })
+    ).toBeInTheDocument()
+
+    expect(screen.getByRole('link', { name: /wishlist/i })).toBeInTheDocument()
+
+    expect(screen.getByRole('link', { name: /Sign out/i })).toBeInTheDocument()
   })
 })
