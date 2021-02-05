@@ -19,7 +19,7 @@ const CartList = ({ items, total, hasButton = false }: CartListProps) => (
       {!hasButton && <span>Total:</span>}
       <S.Total>{total}</S.Total>
       {hasButton && (
-        <Link href="/cart">
+        <Link href="/cart" prefetch={false}>
           <Button as="a">Buy it now</Button>
         </Link>
       )}
