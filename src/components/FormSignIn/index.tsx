@@ -27,7 +27,7 @@ const FormSignIn = () => (
       </Button>
       <FormLink>
         Do not have an account?{' '}
-        <Link href="/sign-up" prefetch={false}>
+        <Link href="/sign-up">
           <a>Sign Up</a>
         </Link>
       </FormLink>

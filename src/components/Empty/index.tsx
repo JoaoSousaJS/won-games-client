@@ -19,7 +19,7 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => (
     <S.Description>{description}</S.Description>
 
     {hasLink && (
-      <Link href="/" passHref prefetch={false}>
+      <Link href="/" passHref>
         <Button as="a">Go back to store</Button>
       </Link>
     )}

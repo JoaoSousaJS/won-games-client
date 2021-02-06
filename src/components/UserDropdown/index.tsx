@@ -24,19 +24,19 @@ const UserDropdown = ({ username }: UserDropdownProps) => (
     }
   >
     <S.Nav>
-      <Link href="/profile/me" prefetch={false} passHref>
+      <Link href="/profile/me" passHref>
         <S.Link>
           <AccountCircle />
           <span>My profile</span>
         </S.Link>
       </Link>
-      <Link href="/wishlist" prefetch={false} passHref>
+      <Link href="/wishlist" passHref>
         <S.Link title="Wishlist">
           <FavoriteBorder />
           <span>Wishlist</span>
         </S.Link>
       </Link>
-      <Link href="/logout" prefetch={false} passHref>
+      <Link href="/logout" passHref>
         <S.Link title="Sign out">
           <ExitToApp />
           <span>Sign out</span>

@@ -56,13 +56,13 @@ const Footer = () => (
         </Heading>
 
         <nav aria-labelledby="footer resources">
-          <Link href="/" prefetch={false}>
+          <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href="/games" prefetch={false}>
+          <Link href="/games">
             <a>Store</a>
           </Link>
-          <Link href="/search" prefetch={false}>
+          <Link href="/search">
             <a>Buscar</a>
           </Link>
         </nav>

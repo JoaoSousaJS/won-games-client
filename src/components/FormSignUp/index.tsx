@@ -39,7 +39,7 @@ const FormSignUp = () => (
       </Button>
       <FormLink>
         Already have an account?{' '}
-        <Link href="/sign-in" prefetch={false}>
+        <Link href="/sign-in">
           <a>Sign In</a>
         </Link>
       </FormLink>
