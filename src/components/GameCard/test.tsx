@@ -4,6 +4,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import GameCard from './index'
 
 const props = {
+  slug: 'population-zero',
   title: 'Population Zero',
   developer: 'Rockstar games',
   img:
@@ -30,6 +31,11 @@ describe('<GameCard />', () => {
     expect(screen.getByText(/AUD 235.00/i)).toBeInTheDocument()
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
+
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`
+    )
   })
 
   it('should render price in label', () => {
