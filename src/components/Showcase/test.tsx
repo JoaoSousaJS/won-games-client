@@ -7,6 +7,7 @@ import gamesMock from 'components/GameCardSlider/mock'
 import Showcase from './index'
 
 const props = {
+  slug: 'population-zero',
   title: 'Most Popular',
   highlight: highlightMock,
   games: gamesMock
