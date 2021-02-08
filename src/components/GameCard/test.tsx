@@ -9,7 +9,7 @@ const props = {
   developer: 'Rockstar games',
   img:
     'https://steamcdn-a.akamaihd.net/steam/apps/1091500/header.jpg?t=1607696821',
-  price: 'AUD 235.00'
+  price: 235
 }
 
 describe('<GameCard />', () => {
@@ -28,7 +28,7 @@ describe('<GameCard />', () => {
       screen.getByRole('img', { name: /population zero/i })
     ).toHaveAttribute('src', props.img)
 
-    expect(screen.getByText(/AUD 235.00/i)).toBeInTheDocument()
+    expect(screen.getByText('$235.00')).toBeInTheDocument()
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
 
@@ -41,27 +41,24 @@ describe('<GameCard />', () => {
   it('should render price in label', () => {
     renderWithTheme(<GameCard {...props} />)
 
-    expect(screen.getByText(/AUD 235.00/i)).not.toHaveStyle({
+    expect(screen.getByText('$235.00')).not.toHaveStyle({
       textDecoration: 'line-through'
     })
-    expect(screen.getByText(/AUD 235.00/i)).not.toHaveAttribute(
-      'color',
-      '#8F8F8F'
-    )
+    expect(screen.getByText('$235.00')).not.toHaveAttribute('color', '#8F8F8F')
 
-    expect(screen.getByText(/AUD 235.00/i)).toHaveStyle({
+    expect(screen.getByText('$235.00')).toHaveStyle({
       backgroundColor: '#3CD3C1'
     })
   })
 
   it('should render a line-through in price when promotional', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice="AUD 230.00" />)
+    renderWithTheme(<GameCard {...props} promotionalPrice={230} />)
 
-    expect(screen.getByText(/AUD 235.00/i)).toHaveStyle({
+    expect(screen.getByText('$235.00')).toHaveStyle({
       textDecoration: 'line-through'
     })
 
-    expect(screen.getByText(/AUD 230.00/i)).not.toHaveStyle({
+    expect(screen.getByText('$230.00')).not.toHaveStyle({
       textDecoration: 'line-through'
     })
   })

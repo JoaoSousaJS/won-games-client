@@ -10,8 +10,8 @@ export default {
     developer: 'Rockstar games',
     img:
       'https://steamcdn-a.akamaihd.net/steam/apps/1091500/header.jpg?t=1607696821',
-    price: 'AUD 235.00',
-    promotionalPrice: 'AUD 200.00'
+    price: 235,
+    promotionalPrice: 200
   },
   argTypes: {
     onFav: { action: 'clicked' },
