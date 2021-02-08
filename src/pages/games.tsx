@@ -23,7 +23,7 @@ export async function getStaticProps() {
         title: game.name,
         developer: game.developers[0].name,
         img: `http://localhost:1337${game.cover!.url}`,
-        price: game.price
+        price: game.price === 0 ? 'Free' : game.price
       })),
       filterItems: filterItemsMock
     }
