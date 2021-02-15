@@ -15,6 +15,13 @@ export const QUERY_HOME = gql`
     ) {
       ...GameFragment
     }
+    upcomingGames: games(
+      where: { release_date_gt: "2021-02-13" }
+      sort: "release_date:asc"
+      limit: 8
+    ) {
+      ...GameFragment
+    }
   }
 
   ${BannerFragment}
