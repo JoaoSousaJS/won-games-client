@@ -32,21 +32,9 @@ export async function getStaticProps() {
         alignment: sections?.popularGames?.highlight?.alignment
       },
       mostPopularGamesTitle: sections?.popularGames?.title,
-      mostPopularGames: sections!.popularGames!.games.map((game) => ({
-        title: game.name,
-        slug: game.slug,
-        developers: game.developers[0].name,
-        img: `http://localhost:1337${game.cover?.url}`,
-        price: game.price
-      })),
+      mostPopularGames: gamesMapper(sections!.popularGames!.games),
       upcomingGamesTitle: sections?.upcomingGames?.title,
-      upcommingGames: upcomingGames.map((game) => ({
-        title: game.name,
-        slug: game.slug,
-        developers: game.developers[0].name,
-        img: `http://localhost:1337${game.cover?.url}`,
-        price: game.price
-      })),
+      upcommingGames: gamesMapper(upcomingGames),
       upcommingHighlight: {
         title: sections?.upcomingGames?.highlight?.title,
         subtitle: sections?.upcomingGames?.highlight?.subtitle,
@@ -57,13 +45,7 @@ export async function getStaticProps() {
         alignment: sections?.upcomingGames?.highlight?.alignment
       },
       freeGamesTitle: sections?.freeGames?.title,
-      freeGames: freeGames.map((game) => ({
-        title: game.name,
-        slug: game.slug,
-        developers: game.developers[0].name,
-        img: `http://localhost:1337${game.cover?.url}`,
-        price: game.price
-      })),
+      freeGames: gamesMapper(freeGames),
       freeHighlight: {
         title: sections?.freeGames?.highlight?.title,
         subtitle: sections?.freeGames?.highlight?.subtitle,
