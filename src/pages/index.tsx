@@ -2,6 +2,7 @@ import Home, { HomeTemplatesProps } from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
 import { QueryHome } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
+import { bannerMapper } from 'utils/mapper'
 
 export default function Index(props: HomeTemplatesProps) {
   return <Home {...props} />
@@ -18,18 +19,7 @@ export async function getStaticProps() {
   return {
     props: {
       revalidate: 60,
-      banners: banners.map((banner) => ({
-        img: `http://localhost:1337${banner.image?.url}`,
-        title: banner.title,
-        subtitle: banner.subtitle,
-        buttonLabel: banner.button?.label,
-        buttonLink: banner.button?.link,
-        ...(banner.ribbon && {
-          ribbon: banner.ribbon?.text,
-          ribbonColor: banner.ribbon?.color,
-          ribbonSize: banner.ribbon?.size
-        })
-      })),
+      banners: bannerMapper(banners),
       newGames: newGames.map((game) => ({
         title: game.name,
         slug: game.slug,
