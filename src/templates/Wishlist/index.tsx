@@ -18,7 +18,7 @@ export type WishListTemplateProps = {
 const Wishlist = ({
   games = [],
   recommendedGames,
-  recommendedTitle = 'You may like these games',
+  recommendedTitle,
   recommendedHighlight
 }: WishListTemplateProps) => (
   <Base>
@@ -43,7 +43,7 @@ const Wishlist = ({
       <Divider />
     </Container>
     <Showcase
-      title={recommendedTitle}
+      title={recommendedTitle || 'You may like these games'}
       games={recommendedGames}
       highlight={recommendedHighlight}
     />
