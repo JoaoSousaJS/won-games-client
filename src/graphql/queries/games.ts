@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client'
 import { GameFragment } from 'graphql/fragments/game'
+import { HighlightFragment } from 'graphql/fragments/highlight'
 
 export const QUERY_GAMES = gql`
   query QueryGames($limit: Int!) {
@@ -39,5 +40,19 @@ export const QUERY_GAME_BY_SLUG = gql`
         name
       }
     }
+    recommended {
+      section {
+        title
+        highlight {
+          ...HighlightFragment
+        }
+        games {
+          ...GameFragment
+        }
+      }
+    }
   }
+
+  ${GameFragment}
+  ${HighlightFragment}
 `

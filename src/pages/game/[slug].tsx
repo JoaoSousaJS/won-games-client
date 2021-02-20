@@ -10,6 +10,7 @@ import {
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
 import { GetStaticProps } from 'next'
+import { gamesMapper } from 'utils/mapper'
 
 const apolloClient = initializeApollo()
 
@@ -71,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       upcomingGames: gamesMock,
       upcomingHighlight: highlightMock,
-      recommendGames: gamesMock
+      recommendGames: gamesMapper(data.recommended?.section?.games)
     }
   }
 }
