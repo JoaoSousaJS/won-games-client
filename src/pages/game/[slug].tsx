@@ -72,7 +72,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       upcomingGames: gamesMock,
       upcomingHighlight: highlightMock,
-      recommendGames: gamesMapper(data.recommended?.section?.games)
+      recommendGames: gamesMapper(data.recommended?.section?.games),
+      recommendedTitle: data.recommended?.section?.title
     }
   }
 }
