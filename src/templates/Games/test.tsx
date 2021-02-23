@@ -28,6 +28,17 @@ jest.mock(
   () => ({ children }: React.PropsWithChildren<LinkProps>) => children
 )
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+const push = jest.fn()
+
+useRouter.mockImplementation(() => ({
+  push,
+  query: '',
+  asPath: '',
+  route: '/'
+}))
+
 describe('<Games />', () => {
   it('should render loading when starting the template', () => {
     renderWithTheme(
