@@ -77,6 +77,7 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
               <Empty
                 title=":("
                 description="We didn't find any games with this filter"
+                hasLink
               />
             )}
           </section>
