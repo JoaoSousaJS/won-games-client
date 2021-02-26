@@ -4,7 +4,7 @@ import gamesMock from 'components/GameCardSlider/mock'
 import { initializeApollo } from 'utils/apollo'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers/mapper'
+import { gamesMapper, highlightMapper } from 'utils/mappers'
 
 export default function WishlistPage(props: WishListTemplateProps) {
   return <Wishlist {...props} />
