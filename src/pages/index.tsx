@@ -18,7 +18,8 @@ export async function getStaticProps() {
     query: QUERY_HOME,
     variables: {
       date: TODAY
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
   return {
     revalidate: 10,
