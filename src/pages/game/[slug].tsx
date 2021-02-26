@@ -8,7 +8,7 @@ import {
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
 import { GetStaticProps } from 'next'
-import { gamesMapper, highlightMapper } from 'utils/mapper'
+import { gamesMapper, highlightMapper } from 'utils/mappers/mapper'
 import {
   QueryUpcoming,
   QueryUpcomingVariables
