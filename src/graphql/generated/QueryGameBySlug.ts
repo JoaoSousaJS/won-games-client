@@ -42,6 +42,7 @@ export interface QueryGameBySlug_games_platforms {
 
 export interface QueryGameBySlug_games {
   __typename: "Game";
+  id: string;
   name: string;
   short_description: string;
   description: string;
@@ -89,6 +90,7 @@ export interface QueryGameBySlug_recommended_section_games_developers {
 
 export interface QueryGameBySlug_recommended_section_games {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   cover: QueryGameBySlug_recommended_section_games_cover | null;
