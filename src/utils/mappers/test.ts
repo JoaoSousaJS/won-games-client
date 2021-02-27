@@ -1,6 +1,9 @@
 import { QueryGames_games } from 'graphql/generated/QueryGames'
-import { QueryHome_banners } from 'graphql/generated/QueryHome'
-import { bannerMapper, gamesMapper } from '.'
+import {
+  QueryHome_banners,
+  QueryHome_sections_freeGames_highlight
+} from 'graphql/generated/QueryHome'
+import { bannerMapper, gamesMapper, highlightMapper } from '.'
 
 describe('bannerMapper()', () => {
   it('should return the right format when mapped', () => {
@@ -66,5 +69,32 @@ describe('gamesMapper(', () => {
         price: game.price
       }
     ])
+  })
+})
+
+describe('highlightMapper()', () => {
+  it('should return the correct format when mapped', () => {
+    const highlight = {
+      title: 'highlight title',
+      subtitle: 'highlight subtitle',
+      background: {
+        url: '/image.jpg'
+      },
+      floatImage: {
+        url: '/image2.jpg'
+      },
+      alignment: 'right',
+      buttonLabel: 'button label',
+      buttonLink: 'google.com'
+    } as QueryHome_sections_freeGames_highlight
+    expect(highlightMapper(highlight)).toStrictEqual({
+      title: highlight!.title,
+      subtitle: highlight!.subtitle,
+      backgroundImage: `http://localhost:1337${highlight!.background?.url}`,
+      floatImage: `http://localhost:1337${highlight!.floatImage?.url}`,
+      buttonLabel: highlight!.buttonLabel,
+      buttonLink: highlight!.buttonLink,
+      alignment: highlight!.alignment
+    })
   })
 })
