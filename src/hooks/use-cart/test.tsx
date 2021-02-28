@@ -90,4 +90,27 @@ describe('useCart', () => {
       JSON.stringify([])
     )
   })
+
+  it('should clear the cart', () => {
+    const wrapper = ({ children }: CartProvderProps) => (
+      <MockedProvider mocks={[gamesMock]}>
+        <CartProvider>{children}</CartProvider>
+      </MockedProvider>
+    )
+
+    setStorageItem('cartItems', ['1'])
+
+    const { result } = renderHook(() => useCart(), {
+      wrapper
+    })
+
+    act(() => {
+      result.current.clearCart()
+    })
+
+    expect(result.current.quantity).toBe(0)
+    expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
+      JSON.stringify([])
+    )
+  })
 })
