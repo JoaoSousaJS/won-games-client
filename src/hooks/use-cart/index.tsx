@@ -71,13 +71,11 @@ const CartProvider = ({ children }: CartProvderProps) => {
   }
 
   const addToCart = (id: string) => {
-    const newCartItems = [...cartItems, id]
-    saveCart(newCartItems)
+    saveCart([...cartItems, id])
   }
 
   const removeFromCart = (id: string) => {
-    const newCartItems = cartItems.filter((itemId: string) => itemId !== id)
-    saveCart(newCartItems)
+    saveCart(cartItems.filter((itemId: string) => itemId !== id))
   }
 
   return (
