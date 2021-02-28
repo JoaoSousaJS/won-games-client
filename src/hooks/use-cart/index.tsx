@@ -14,10 +14,12 @@ export type CartItem = {
 
 export type CartContextdata = {
   items: CartItem[]
+  quantity: number
 }
 
 export const CartContextDefaultValues = {
-  items: []
+  items: [],
+  quantity: 0
 }
 
 export const CartContext = createContext<CartContextdata>(
@@ -49,7 +51,8 @@ const CartProvider = ({ children }: CartProvderProps) => {
   return (
     <CartContext.Provider
       value={{
-        items: cartMapper(data?.games)
+        items: cartMapper(data?.games),
+        quantity: cartItems.length
       }}
     >
       {children}
