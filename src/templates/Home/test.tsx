@@ -1,12 +1,11 @@
 import 'match-media-mock'
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import bannerMock from 'components/BannerSlider/mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 
 import Home from './index'
+import { render, screen } from 'utils/test-utils'
 
 const props = {
   banners: bannerMock,
@@ -39,7 +38,7 @@ jest.mock('components/BannerSlider', () => {
 
 describe('<Home />', () => {
   it('should render banner and showcase', () => {
-    renderWithTheme(<Home {...props} />)
+    render(<Home {...props} />)
 
     expect(screen.getByTestId('Mock BannerSlider')).toBeInTheDocument()
     expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(4)
