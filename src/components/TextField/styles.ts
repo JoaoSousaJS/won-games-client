@@ -30,8 +30,9 @@ export const Input = styled.input<IconPositionProps>`
     outline: none;
     width: 100%;
 
-    &: -webkit-autofill {
-      -webkit-box-shadow: 0 0 0 ${theme.spacings.small} ${theme.colors.lightGray}
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 ${theme.spacings.small} ${theme.colors.lightGray} insert;
+      filter: none;
     }
   `}
 `
