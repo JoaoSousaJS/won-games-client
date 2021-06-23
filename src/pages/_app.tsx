@@ -1,3 +1,4 @@
+import NextNprogress from 'nextjs-progressbar'
 import { ApolloProvider } from '@apollo/client'
 import { CartProvider } from 'hooks/use-cart'
 import { AppProps } from 'next/app'
@@ -21,6 +22,13 @@ function App({ Component, pageProps }: AppProps) {
             <meta name="description" content="A good game store" />
           </Head>
           <GlobalStyles />
+          <NextNprogress
+            color="#F231A5"
+            startPosition={0.3}
+            stopDelayMs={200}
+            height={3}
+            showOnShallow={true}
+          />
           <Component {...pageProps} />
         </CartProvider>
       </ThemeProvider>
