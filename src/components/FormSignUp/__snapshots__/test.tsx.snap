@@ -150,8 +150,8 @@ exports[
         </div>
         <input
           class="c5"
-          name="name"
-          placeholder="Name"
+          name="usernamename"
+          placeholder="Username"
           type="text"
           value=""
         />
@@ -278,6 +278,7 @@ exports[
     </div>
     <button
       class="c6 c7"
+      type="submit"
     >
       <span>
         Sign up now
