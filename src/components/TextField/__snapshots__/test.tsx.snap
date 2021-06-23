@@ -36,7 +36,9 @@ exports[`<TextField /> Renders with error 1`] = `
 }
 
 .c8:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 2.4rem #EAEAEA;
+  -webkit-box-shadow: 0 0 0 2.4rem #EAEAEA insert;
+  -webkit-filter: none;
+  filter: none;
 }
 
 .c2 {
