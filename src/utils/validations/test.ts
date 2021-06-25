@@ -38,5 +38,17 @@ describe('validations', () => {
         `"\\"username\\" length must be at least 5 characters long"`
       )
     })
+
+    it('should return invalid email error', () => {
+      const values = {
+        username: 'asdasdas',
+        email: 'invalid-email',
+        password: ''
+      }
+
+      expect(signUpValidate(values).email).toMatchInlineSnapshot(
+        `"\\"email\\" must be a valid email"`
+      )
+    })
   })
 })
