@@ -9,14 +9,27 @@ import { render, screen } from 'utils/test-utils'
 
 const props = {
   banners: bannerMock,
+  newGamesTitle: 'News',
   newGames: [gamesMock[0]],
+  mostPopularGamesTitle: 'Most Popular',
   mostPopularHighlight: highlightMock,
   mostPopularGames: [gamesMock[0]],
+  upcomingGamesTitle: 'Upcoming',
   upcommingGames: [gamesMock[0]],
   upcommingHighlight: highlightMock,
+  freeGamesTitle: 'Free Games',
   freeGames: [gamesMock[0]],
   freeHighlight: highlightMock
 }
+
+jest.mock('templates/Base', () => {
+  return {
+    __esModule: true,
+    default: function Mock({ children }: { children: React.ReactNode }) {
+      return <div data-testid="Mock Base">{children}</div>
+    }
+  }
+})
 
 jest.mock('components/Showcase', () => {
   return {
