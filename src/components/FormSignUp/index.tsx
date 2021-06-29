@@ -25,7 +25,11 @@ const FormSignUp = () => {
   })
 
   const [createUser, { error, loading }] = useMutation(MUTATION_REGISTER, {
-    onError: (err) => console.error(err),
+    onError: (err) =>
+      setFormError(
+        err?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0]
+          .message
+      ),
     onCompleted: () => {
       !error &&
         signIn('credentials', {
@@ -43,7 +47,6 @@ const FormSignUp = () => {
 
     if (Object.keys(errors).length) {
       setFielderror(errors)
-      setFormError('Invalid credentials')
       return
     }
 
