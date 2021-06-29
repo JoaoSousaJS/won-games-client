@@ -150,7 +150,7 @@ exports[
         </div>
         <input
           class="c5"
-          name="usernamename"
+          name="username"
           placeholder="Username"
           type="text"
           value=""
@@ -269,7 +269,7 @@ exports[
         </div>
         <input
           class="c5"
-          name="confirm-password"
+          name="confirmPassword"
           placeholder="Confirm Password"
           type="password"
           value=""

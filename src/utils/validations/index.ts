@@ -7,12 +7,9 @@ const fieldsValidations = {
     .email({ tlds: { allow: false } })
     .required(),
   password: Joi.string().required(),
-  confirm_password: Joi.string()
-    .valid(Joi.ref('password'))
-    .required()
-    .messages({
-      'any.only': 'confirm password does not match with password'
-    })
+  confirmPassword: Joi.string().valid(Joi.ref('password')).required().messages({
+    'any.only': 'confirm password does not match with password'
+  })
 }
 
 export type FieldErrors = {
