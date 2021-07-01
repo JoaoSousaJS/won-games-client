@@ -17,7 +17,9 @@ jest.mock('templates/Base', () => ({
 
 jest.mock(
   'next/link',
-  () => ({ children }: React.PropsWithChildren<LinkProps>) => children
+  () =>
+    ({ children }: React.PropsWithChildren<LinkProps>) =>
+      children
 )
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
